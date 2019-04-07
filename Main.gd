@@ -34,6 +34,8 @@ func _on_MobTimer_timeout():
 	# Create a Mob instance and add it to the scene.
 	var mob = Mob.instance()
 	add_child(mob)
+	# Set the mob's position to the selected MobSpawnLocation above.
+	mob.position = $MobPath/MobSpawnLocation.position
 	#Set the mob's direction perpendicular to the path direction.
 	var direction = $MobPath/MobSpawnLocation.rotation + PI / 2
 	#  Add some randomness to the  direction.
